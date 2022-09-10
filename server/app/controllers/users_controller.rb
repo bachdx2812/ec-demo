@@ -8,8 +8,6 @@ class UsersController < ApplicationController
     #   message: "success",
     #   token: "jklwjklewqjklejiojkl"
     # }
-    puts "dit me may params day: #{params}"
-
     @user = User.find_by(email: params[:email])
     if @user && @user.valid_password?(params[:password])
       render json: {
